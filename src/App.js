@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Spline from '@splinetool/react-spline';
+import { useMediaQuery } from 'react-responsive';
+import FrameAnimation from "./FrameAnimacion";
 
-function App() {
+export default function App() {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='titulo__container'>
+        <h1>Manzana {isMobile && <br />}de las Luces</h1>
+        <h6>Sitio en construcción</h6>
+      </div>
+        <FrameAnimation interval={300} size={250} />
+      {/* <div className="spline__container">
+        <Spline scene="https://prod.spline.design/nzz7TzFhaIvcWv2n/scene.splinecode" />
+      </div> */}
+
+    </>
   );
 }
-
-export default App;
