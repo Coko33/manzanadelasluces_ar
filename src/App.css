@@ -76,3 +76,15 @@ h6 {
   font-size: 20px;
   margin: 0;
 }
+.videojuego__container {
+  position: relative;
+  top: 80px;
+  width: 40px;
+  height: 100px;
+}
+.videojuego__subContainer {
+
+}
+.videojuego__imgContainer {
+
+}

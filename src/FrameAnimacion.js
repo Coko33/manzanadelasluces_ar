@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react";
 
-const frames = [
-  "/animaciones/mira y espera/ameghino-mira-1.png",
-  "/animaciones/mira y espera/ameghino-mira-2.png",
-  "/animaciones/mira y espera/ameghino-mira-3.png",
-  "/animaciones/mira y espera/ameghino-mira-4.png",
-  "/animaciones/mira y espera/ameghino-mira-5.png",
-];
 
-export default function FrameAnimation({ interval = 250, size = 100 }) {
+
+export default function FrameAnimation({ interval, size, frames}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -23,7 +17,7 @@ export default function FrameAnimation({ interval = 250, size = 100 }) {
       src={frames[currentIndex]}
       alt={`Frame ${currentIndex + 1}`}
       width={size}
-      height={size}
+      //height={size}
     />
   );
 }
