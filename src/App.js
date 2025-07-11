@@ -20,17 +20,29 @@ export default function App() {
   return (
     <>
       <div className='titulo__container'>
-        <h1>Manzana {isMobile && <br />}de las Luces</h1>
+        <h1>MANZANA {isMobile && <br />}DE LAS LUCES</h1>
       </div>
       <div className="videojuego__container">
         <div className="videojuego__subContainer">
-          <div className="videojuego__imgContainer">
+          <div className="imgNaty">
             <FrameAnimation interval={300} size={250} frames={framesNaty} />
           </div>
-          <div className="videojuego__botonesContainer"></div>
+          <div className="videojuego__botonesConatiner">
+            <a href="https://manzanadelasluces.itch.io/los-misteriosos-tuneles" className="videojuego__btnContainer">
+              <p>descargar para Windows</p>
+              <img src="/logos/itch.png"></img>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.manzanadelasluces.lmt&pli=1" className="videojuego__btnContainer">
+              <p>descargar para Android</p>
+              <img className="imgGoogle" src="/logos/googlePlay.png"></img>
+            </a>
+          </div>
         </div>
       </div>
-        <FrameAnimation interval={300} size={250} frames={framesAmeghino} />
+        <div className="imgAmeghino">
+          <FrameAnimation interval={300} size={250} frames={framesAmeghino} />
+        </div>
+        
       {/* <div className="spline__container">
         <Spline scene="https://prod.spline.design/nzz7TzFhaIvcWv2n/scene.splinecode" />
       </div> */}

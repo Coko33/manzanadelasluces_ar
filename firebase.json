@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "victorramos-5d332",
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [

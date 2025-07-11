@@ -4,7 +4,8 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .App-logo {
@@ -19,7 +20,7 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #070808;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -59,15 +60,22 @@ body {
   color: transparent;
   width: 100%;
 }
-#root img{
+.imgAmeghino {
   position: absolute;
   right: -90px;
   bottom: -10px;
 }
+.imgNaty {
+  position: absolute;
+  left: -210px;
+  bottom: -10px;
+  z-index: 1000;
+}
 h1 {
-  color:#ff2e2e;
+  color:#1b1b1b;
   text-align: center;
   font-size: 60px;
+  font-weight: 900;
   margin-bottom: 0;
 }
 h6 {
@@ -78,13 +86,78 @@ h6 {
 }
 .videojuego__container {
   position: relative;
+  display: flex;
   top: 80px;
-  width: 40px;
-  height: 100px;
+  width: 40vw;
+  height: 400px;
+  background-color: #fcdd63;
+  border-radius: 10px;
 }
-.videojuego__subContainer {
 
+.videojuego__subContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 30px;
 }
 .videojuego__imgContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.videojuego__botonesConatiner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 400px;
+}
+.videojuego__btnContainer {
+  border: solid 3px;
+  border-radius: 10px;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.videojuego__btnContainer:hover {
+  background-color: #f1a1326b;
+  transition: background-color 0.3s ease;
+}
+.videojuego__btnContainer p {
 
+}
+.videojuego__btnContainer img {
+  position: relative;
+  width: 200px;
+}
+.imgGoogle {
+  width: 250px !important;
+}
+@media (max-width: 767px) {
+  .videojuego__container {
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .videojuego__botonesConatiner {
+  height: auto;
+  gap: 20px;
+}
+.videojuego__btnContainer {
+  height: 120px;
+  flex-direction: row;
+  gap: 10px;
+}
+.videojuego__btnContainer img {
+  width: 120px;
+}
 }
