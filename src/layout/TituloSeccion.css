@@ -1,0 +1,10 @@
+.TituloSeccion__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    background-color: chocolate;
+    border-radius: 10px;
+    top: 0px;
+}

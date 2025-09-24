@@ -1,0 +1,27 @@
+.laColeccionPerdida__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 200px;
+    background-color: #fcdd63;
+    border-radius: 10px;
+    top: 0px;
+    margin: 90px 0;
+}
+.spline__container {
+    position: relative;
+    left: -400px;
+    display: flex;
+    width: 400px;
+    height: 400px;
+}
+.spline__container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spline__container > *:nth-last-child(1) {
+
+}
