@@ -1,27 +1,39 @@
-.laColeccionPerdida__container {
+.splineGalery__container {
     position: relative;
     display: flex;
+    gap: 20px;   
     align-items: center;
-    justify-content: center;
-    width: 40%;
-    height: 200px;
+    width: 80%;
     background-color: #fcdd63;
-    border-radius: 10px;
-    top: 0px;
-    margin: 90px 0;
-}
-.spline__container {
-    position: relative;
-    left: -400px;
-    display: flex;
-    width: 400px;
-    height: 400px;
-}
-.spline__container > div {
-    display: flex;
+    margin: 30px 0;
+    border-radius: 15px;
     justify-content: center;
-    align-items: center;
 }
-.spline__container > *:nth-last-child(1) {
+.spline-wrap{
+  position: relative;
+  width: 400px;             /* ancho objetivo */
+  aspect-ratio: 200 / 200;  /* alto sale solo (250px) */
+  height: auto;
+  overflow: hidden;
+  flex: 0 0 400px;          /* evita que Flex lo estire */
+  border-radius: 15px;
+  margin: 40px;
+}
+/* el div interno que monta Spline */
+.spline-wrap > div{
+  position: absolute;
+  inset: 0;                 /* top/right/bottom/left = 0 */
+  width: 100% !important;
+  height: 100% !important;
+}
 
+/* el canvas debe llenar el wrapper, no más grande */
+.spline-wrap canvas{
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
 }
