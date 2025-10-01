@@ -1,5 +1,5 @@
 import FrameAnimation from "./FrameAnimacion";
-import TituloSeccion from "./../layout/TituloSeccion"
+import { useMediaQuery } from "react-responsive";
 import "./Videojuego.css"
 const framesAmeghino = [
   "/animaciones/mira y espera/ameghino-mira-1.png",
@@ -14,15 +14,15 @@ const framesNaty = [
 ];
 
 export default function Videojuego() {
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return(
         <>
-          <TituloSeccion titulo={"Los Misteriosos Túneles"}></TituloSeccion>
           <div className="videojuego__container">
             <div className="videojuego__subContainer">
               <div className="imgNaty">
-                <FrameAnimation interval={300} size={250} frames={framesNaty} />
+                <FrameAnimation interval={300} size={isMobile ? 200 : 250} frames={framesNaty} />
               </div>
-              <div className="videojuego__botonesConatiner">
+              <div className="videojuego__botonesContainer">
                 <a href="https://manzanadelasluces.itch.io/los-misteriosos-tuneles" className="videojuego__btnContainer">
                   <p>descargar para Windows</p>
                   <img src="/logos/itch.png"></img>
@@ -35,7 +35,7 @@ export default function Videojuego() {
             </div>
           </div>
           <div className="imgAmeghino">
-            <FrameAnimation interval={300} size={250} frames={framesAmeghino} />
+            <FrameAnimation interval={300} size={isMobile ? 200 : 250} frames={framesAmeghino} />
           </div>
         </>
     )

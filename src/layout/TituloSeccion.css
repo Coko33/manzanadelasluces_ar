@@ -8,3 +8,8 @@
     border-radius: 10px;
     top: 0px;
 }
+@media (max-width: 500px) {
+    .TituloSeccion__container {
+        width: 100%;
+    }
+}

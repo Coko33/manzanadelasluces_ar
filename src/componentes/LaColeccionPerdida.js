@@ -1,26 +1,10 @@
 import { useEffect, useRef } from "react";
-import TituloSeccion from "../layout/TituloSeccion"
 import Spline from '@splinetool/react-spline';
 
 import "./LaColeccionPerdida.css"
 
 export default function LaColeccionPerdida() {
     const wrapRef = useRef(null);
-
-    /* useEffect(() => {
-        const canvases = document.querySelectorAll('.spline-wrap canvas');
-        canvases.forEach((canvas) => {
-        canvas.addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
-        });
-    }, []); */
-    useEffect(() => {
-        const c = document.querySelector('.spline-wrap canvas');
-        if (!c) return;
-        const onWheel = e => e.preventDefault();
-        c.addEventListener('wheel', onWheel, { passive:false });
-        return () => c.removeEventListener('wheel', onWheel);
-    }, []);
-
 
     const syncCanvas = () => {
         const wrap = wrapRef.current;
@@ -44,19 +28,82 @@ export default function LaColeccionPerdida() {
         return () => { ro.disconnect(); window.removeEventListener('resize', syncCanvas); };
     }, []);
 
+/*     useEffect(() => {
+        const el = wrapRef.current;
+        if (!el) return;
+
+        const onWheel = (e) => {
+        // Bloquea el zoom del viewer
+        e.preventDefault();
+        e.stopPropagation();
+        // Pasa el scroll a la página (o al contenedor scrollable más cercano)
+        const scroller = document.scrollingElement || window;
+        const top = e.deltaY;
+        if ('scrollBy' in window) window.scrollBy({ top });
+        else scroller.scrollTop += top;
+        };
+
+        // En Chrome en trackpad “pinch-to-zoom” llega como wheel con ctrlKey=true;
+        // igual lo bloqueamos (e.preventDefault) y pasamos el delta al documento.
+        el.addEventListener('wheel', onWheel, { passive: false });
+        return () => el.removeEventListener('wheel', onWheel);
+    }, []); */
+
+/*     useEffect(() => {
+        const el = wrapRef.current;
+        if (!el) return;
+
+        const passToPage = (dy) => {
+        const scroller = document.scrollingElement || window;
+        if ('scrollBy' in window) window.scrollBy({ top: dy });
+        else scroller.scrollTop += dy;
+        };
+
+        const onWheel = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        passToPage(e.deltaY);
+        };
+
+        // Bloquear pinch en móviles
+        const onTouchMove = (e) => {
+        if (e.touches && e.touches.length > 1) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        };
+
+        // Safari iOS usa estos eventos de gesto
+        const onGesture = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        };
+
+        el.addEventListener('wheel', onWheel, { passive: false });
+        el.addEventListener('touchmove', onTouchMove, { passive: false });
+        el.addEventListener('gesturestart', onGesture, { passive: false });
+        el.addEventListener('gesturechange', onGesture, { passive: false });
+        el.addEventListener('gestureend', onGesture, { passive: false });
+
+        return () => {
+        el.removeEventListener('wheel', onWheel);
+        el.removeEventListener('touchmove', onTouchMove);
+        el.removeEventListener('gesturestart', onGesture);
+        el.removeEventListener('gesturechange', onGesture);
+        el.removeEventListener('gestureend', onGesture);
+        };
+    }, []); */
+
 
     return (
-        <>
-            <TituloSeccion titulo={"La Colección Perdida"}></TituloSeccion>
+        <>            
             <div className="splineGalery__container">
                 <div ref={wrapRef} className="spline-wrap">
-                    <Spline scene="https://prod.spline.design/qLJJdz-GuUQv91yN/scene.splinecode"/>
-                </div>
-                <div ref={wrapRef} className="spline-wrap">
+                    <div class="card">
+                        <span class="ribbon">Próximamente</span>
+                    </div>
                     <Spline scene="https://prod.spline.design/uv2f2QHlNCAJ2Tkt/scene.splinecode"/>
-                </div>
-                <div ref={wrapRef} className="spline-wrap">
-                    <Spline scene="https://prod.spline.design/6CE3GeQEi6nob2kB/scene.splinecode"/>
+                    <div className="spline-capture" />
                 </div>
             </div>
         </>

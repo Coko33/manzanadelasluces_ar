@@ -3,12 +3,13 @@
   right: -45px;
   bottom: -400px;
 }
-.imgNaty {
-  position: absolute;
-  left: -210px;
-  bottom: -60px;
-  z-index: 1000;
-}
+    .imgNaty {
+    position: absolute;
+    left: -210px;
+    bottom: -60px;
+    z-index: 1000;  
+  }
+
 h1 {
   color:#1b1b1b;
   text-align: center;
@@ -27,12 +28,11 @@ h6 {
   display: flex;
   top: 0px;
   margin: 40px 0;
-  width: 40vw;
+  width: 100%;
   height: 400px;
   background-color: #fcdd63;
   border-radius: 10px;
 }
-
 .videojuego__subContainer {
   position: relative;
   width: 100%;
@@ -44,7 +44,7 @@ h6 {
   left: 0;
   bottom: 0;
 }
-.videojuego__botonesConatiner {
+.videojuego__botonesContainer {
   position: relative;
   display: grid;
   place-items: center;
@@ -69,9 +69,6 @@ h6 {
   background-color: #f1a1326b;
   transition: background-color 0.3s ease;
 }
-.videojuego__btnContainer p {
-
-}
 .videojuego__btnContainer img {
   position: relative;
   width: 200px;
@@ -80,24 +77,28 @@ h6 {
   width: 250px !important;
 }
 @media (max-width: 767px) {
-  .videojuego__container {
-    width: 90vw;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  .imgAmeghino {
+    bottom: -900px;
   }
-  .videojuego__botonesConatiner {
-  height: auto;
-  gap: 20px;
 }
-.videojuego__btnContainer {
-  height: 120px;
-  flex-direction: row;
-  gap: 10px;
-}
-.videojuego__btnContainer img {
-  width: 120px;
+@media (max-width: 500px) {
+  .imgNaty {
+    left: -130px;
+  }
+  .videojuego__subContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 30px;
+  }
+  .videojuego__botonesContainer {
+    width: 100%;
+  }
+  .videojuego__btnContainer img {
+    width: 100px;
+  }
+  .imgGoogle {
+    width: 150px !important;
+  }
 }
 
-}
